@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Recipe Book</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>🍲 My Recipe Book</h1>
+            <p>Save, edit, and search your favorite recipes easily</p>
+        </header>
+
+        <!-- Success / Error Alert Message Box -->
+        <div id="alert-box" class="alert hidden"></div>
+
+        <!-- Recipe Add / Edit Form -->
+        <section class="form-section">
+            <h2 id="form-title">Add New Recipe</h2>
+            <form id="recipe-form">
+                <!-- Hidden ID for Edit Mode -->
+                <input type="hidden" id="recipe-id">
+
+                <div class="form-group">
+                    <label for="dish-name">Dish Name *</label>
+                    <input type="text" id="dish-name" placeholder="e.g., Chicken Biryani">
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category *</label>
+                    <select id="category">
+                        <option value="">-- Select Category --</option>
+                        <option value="Breakfast">Breakfast</option>
+                        <option value="Lunch/Dinner">Lunch / Dinner</option>
+                        <option value="Dessert">Dessert</option>
+                        <option value="Snacks">Snacks / Fast Food</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="ingredients">Ingredients *</label>
+                    <textarea id="ingredients" rows="3" placeholder="e.g., Rice 1kg, Chicken 1kg, Tomatoes, Spices..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="instructions">Instructions *</label>
+                    <textarea id="instructions" rows="4" placeholder="Write step-by-step instructions..."></textarea>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" id="submit-btn" class="btn primary-btn">Save Recipe</button>
+                    <button type="button" id="cancel-btn" class="btn secondary-btn hidden">Cancel Edit</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Search & Filter Section -->
+        <section class="search-section">
+            <input type="text" id="search-input" placeholder="🔍 Search by dish name or ingredients...">
+        </section>
+
+        <!-- Recipes Display List (Read) -->
+        <section class="recipes-section">
+            <h2>Saved Recipes (<span id="recipe-count">0</span>)</h2>
+            <div id="recipes-list" class="recipes-grid">
+                <!-- JavaScript will render recipes here -->
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
